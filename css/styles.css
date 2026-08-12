@@ -1,1 +1,104 @@
-    
+ body {
+    background-color: #5D737E; 
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ .cabecera-personalizada {
+    background-color: #87BBA2; 
+    padding: 15px 30px;
+    margin-bottom: 30px;
+    color: #F0F7EE;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cabecera-personalizada h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+ .panel-personalizado {
+    background-color: #87BBA2;
+    border-radius: 8px;
+    padding: 25px;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.panel-personalizado h5 {
+    color: #000000;
+    font-weight: bold;
+}
+
+ .form-control, .form-select {
+    border: none;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    background-color: #F0F7EE; 
+    color: #000000;
+}
+
+.form-control:focus, .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(93, 115, 126, 0.3); 
+    outline: none;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: none;
+}
+
+ .tarjeta-tarea {
+    background-color: #FFFFFF; 
+    border-radius: 8px;
+    padding: 20px;
+    height: 100%;
+    position: relative;
+    min-height: 200px;
+     border: 1px solid #e5e7eb; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+     transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+ .tarjeta-tarea:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta 5 pixeles */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Aumenta la sombra */
+    border-color: #c0c4cc; /* Oscurece ligeramente el borde al pasar el mouse */
+}
+
+.titulo-tarea {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.fecha-tarea {
+    font-size: 0.85rem;
+    color: #5D737E; 
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.descripcion-tarea {
+    font-size: 0.9rem;
+    color: #333333;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+ .etiqueta-personalizada {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
