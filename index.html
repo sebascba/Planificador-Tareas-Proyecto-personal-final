@@ -13,7 +13,7 @@
 
 <body>
 
-    <header class="cabecera-personalizada">
+    <header class="cabecera-personalizada ">
         <h1>Mi Planificador de Tareas</h1>
     </header>
     
@@ -23,16 +23,21 @@
              <section class="col-lg-3 col-md-4 mb-4">
                 
                  <div class="panel-personalizado mb-4">
+
+                    <div id="alerta-error" class="alert alert-danger d-none" role="alert">
+                    Por favor ingrese todos los valores de forma adecuada.
+                    </div>
+
                     <form id="formulario-tarea">
-                        <input type="text" class="form-control" placeholder="Titulo de la Tarea">
-                        <input type="text" class="form-control" placeholder="Fecha de entrega">
-                        <select class="form-select">
+                        <input type="text" id="tituloDeLaTarea" class="form-control" placeholder="Titulo de la Tarea">
+                        <input type="date" id="fechaDeEntrega" class="form-control" placeholder="Fecha de entrega">
+                        <select id="estadoTarea"class="form-select">
                             <option value="" disabled selected>Estado</option>
                             <option value="pendiente">Pendiente</option>
                             <option value="completado">Completado</option>
                             <option value="retrasado">Retrasado</option>
                         </select>
-                        <textarea class="form-control" placeholder="Descripcion de la tarea"></textarea>
+                        <textarea class="form-control" id="descripcionDeLaTarea" placeholder="Descripcion de la tarea"></textarea>
                         <button type="submit" class="btn w-100" style="background-color:azure;"> Agregar tarea</button>
 
                     </form>
@@ -116,6 +121,7 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
