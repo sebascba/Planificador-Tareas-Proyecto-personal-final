@@ -102,3 +102,23 @@ textarea.form-control {
     text-transform: uppercase;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+ .tarjeta-tarea {
+    border-width: 3px  ;  
+    border-style: solid;
+}
+
+ .tarjeta-tarea {
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+ .tarjeta-tarea:hover,
+.tarjeta-tarea:focus-within {
+    z-index: 10;
+}
+
+ .dropdown-menu {
+    z-index: 1050  ;
+}

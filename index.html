@@ -5,33 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Planificador de Tareas</title>
-
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <header class="cabecera-personalizada ">
+    <header class="cabecera-personalizada">
         <h1>Mi Planificador de Tareas</h1>
     </header>
     
     <main class="container-fluid px-4">
         <div class="row">
-
              <section class="col-lg-3 col-md-4 mb-4">
-                
                  <div class="panel-personalizado mb-4">
-
                     <div id="alerta-error" class="alert alert-danger d-none" role="alert">
                     Por favor ingrese todos los valores de forma adecuada.
                     </div>
-
                     <form id="formulario-tarea">
                         <input type="text" id="tituloDeLaTarea" class="form-control" placeholder="Titulo de la Tarea">
                         <input type="date" id="fechaDeEntrega" class="form-control" placeholder="Fecha de entrega">
-                        <select id="estadoTarea"class="form-select">
+                        <select id="estadoTarea" class="form-select">
                             <option value="" disabled selected>Estado</option>
                             <option value="pendiente">Pendiente</option>
                             <option value="completado">Completado</option>
@@ -39,11 +33,9 @@
                         </select>
                         <textarea class="form-control" id="descripcionDeLaTarea" placeholder="Descripcion de la tarea"></textarea>
                         <button type="submit" class="btn w-100" style="background-color:azure;"> Agregar tarea</button>
-
                     </form>
                 </div>
-
-                 <!-- <div class="panel-personalizado">
+                <!-- <div class="panel-personalizado">
                     <h5 class="mb-4">Filtrar tareas</h5>
                     <form id="formulario-filtro">
                         <input type="text" class="form-control" placeholder="Palabra clave">
@@ -60,68 +52,127 @@
              <section class="col-lg-9 col-md-8">
                 <div class="row row-cols-1 row-cols-xl-2 g-4">
                     
-                     <div class="col">
-                        <div class="tarjeta-tarea">
+                      <div class="col">
+                        <div class="tarjeta-tarea border-success">
                             <div class="titulo-tarea">Diseño de proyecto</div>
                             <div class="fecha-tarea">Fecha de entrega: 17/08/2026</div>
                             <div class="descripcion-tarea">Se debe diseñar todas las vistas del proyecto en figma</div>
-                            <span class="badge bg-success etiqueta-personalizada">Completado</span>
+                            
+                             <div class="dropdown" style="position: absolute; bottom: 15px; right: 15px;">
+                                <button class="badge bg-success etiqueta-personalizada dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Completado
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-estado="Pendiente" data-bg="bg-warning text-dark" data-border="border-warning">Pendiente</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Completado" data-bg="bg-success" data-border="border-success">Completado</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Retrasado" data-bg="bg-danger" data-border="border-danger">Retrasado</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                     <div class="col">
-                        <div class="tarjeta-tarea">
+                      <div class="col">
+                        <div class="tarjeta-tarea border-success">
                             <div class="titulo-tarea">Creacion del repositorio</div>
                             <div class="fecha-tarea">Fecha de entrega: 21/08/2026</div>
                             <div class="descripcion-tarea">Se debe crear el repositorio de GitHub y establecer las ramas</div>
-                            <span class="badge bg-success etiqueta-personalizada">Completado</span>
+                            
+                             <div class="dropdown" style="position: absolute; bottom: 15px; right: 15px;">
+                                <button class="badge bg-success etiqueta-personalizada dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Completado
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-estado="Pendiente" data-bg="bg-warning text-dark" data-border="border-warning">Pendiente</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Completado" data-bg="bg-success" data-border="border-success">Completado</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Retrasado" data-bg="bg-danger" data-border="border-danger">Retrasado</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                     <div class="col">
-                        <div class="tarjeta-tarea">
+                      <div class="col">
+                        <div class="tarjeta-tarea border-warning">
                             <div class="titulo-tarea">Diseño frontend</div>
                             <div class="fecha-tarea">Fecha de entrega: 24/08/2026</div>
                             <div class="descripcion-tarea">Se debe implementar en codigo los diseños creados en figma</div>
-                            <span class="badge bg-warning text-dark etiqueta-personalizada">Pendiente</span>
+                            
+                             <div class="dropdown" style="position: absolute; bottom: 15px; right: 15px;">
+                                <button class="badge bg-warning text-dark etiqueta-personalizada dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pendiente
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-estado="Pendiente" data-bg="bg-warning text-dark" data-border="border-warning">Pendiente</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Completado" data-bg="bg-success" data-border="border-success">Completado</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Retrasado" data-bg="bg-danger" data-border="border-danger">Retrasado</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                     <div class="col">
-                        <div class="tarjeta-tarea">
+                      <div class="col">
+                        <div class="tarjeta-tarea border-warning">
                             <div class="titulo-tarea">Crear funciones js</div>
                             <div class="fecha-tarea">Fecha de entrega: 29/08/2026</div>
                             <div class="descripcion-tarea">Se le debe dar funcionalidad a toda la pagina con javascript</div>
-                            <span class="badge bg-warning text-dark etiqueta-personalizada">Pendiente</span>
+                            
+                             <div class="dropdown" style="position: absolute; bottom: 15px; right: 15px;">
+                                <button class="badge bg-warning text-dark etiqueta-personalizada dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pendiente
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-estado="Pendiente" data-bg="bg-warning text-dark" data-border="border-warning">Pendiente</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Completado" data-bg="bg-success" data-border="border-success">Completado</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Retrasado" data-bg="bg-danger" data-border="border-danger">Retrasado</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                     <div class="col">
-                        <div class="tarjeta-tarea">
+                      <div class="col">
+                        <div class="tarjeta-tarea border-danger">
                             <div class="titulo-tarea">Bases de datos</div>
                             <div class="fecha-tarea">Fecha de entrega: 03/08/2026</div>
                             <div class="descripcion-tarea">Se debe crear la base de datos para almacenar la informacion del sitio web</div>
-                            <span class="badge bg-danger etiqueta-personalizada">Retrasado</span>
+                            
+                             <div class="dropdown" style="position: absolute; bottom: 15px; right: 15px;">
+                                <button class="badge bg-danger etiqueta-personalizada dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Retrasado
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-estado="Pendiente" data-bg="bg-warning text-dark" data-border="border-warning">Pendiente</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Completado" data-bg="bg-success" data-border="border-success">Completado</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Retrasado" data-bg="bg-danger" data-border="border-danger">Retrasado</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                     <div class="col">
-                        <div class="tarjeta-tarea">
+                      <div class="col">
+                        <div class="tarjeta-tarea border-warning">
                             <div class="titulo-tarea">Integración Backend</div>
                             <div class="fecha-tarea">Fecha de entrega: 10/09/2026</div>
                             <div class="descripcion-tarea">Conectar el diseño frontend con la base de datos</div>
-                            <span class="badge bg-warning text-dark etiqueta-personalizada">Pendiente</span>
+                            
+                             <div class="dropdown" style="position: absolute; bottom: 15px; right: 15px;">
+                                <button class="badge bg-warning text-dark etiqueta-personalizada dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Pendiente
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" data-estado="Pendiente" data-bg="bg-warning text-dark" data-border="border-warning">Pendiente</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Completado" data-bg="bg-success" data-border="border-success">Completado</a></li>
+                                    <li><a class="dropdown-item" href="#" data-estado="Retrasado" data-bg="bg-danger" data-border="border-danger">Retrasado</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                 </div>
             </section>
-
         </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/taskManager.js"></script>
+    <script src="js/index.js"></script>
 </body>
-
 </html>
