@@ -1,6 +1,7 @@
 const formulario = document.querySelector('#formulario-tarea');
 
  const alertaError = document.querySelector('#alerta-error');
+const newTaskForm = document.querySelector('#formulario-tarea');
 
  function validFormFieldInput(data) {
      const tituloDeLaTarea = document.querySelector('#tituloDeLaTarea').value.trim();
@@ -62,4 +63,32 @@ document.addEventListener('click', function(e) {
 });
 
 const taskManager = new TaskManager();
+taskManager.addTask(
+ 'Sacar la basura',
+ 'Sacar la basura al frente de la casa',
+ '2020-09-20',
+ 'PORHACER'
+);
 console.log(taskManager.tasks);
+
+newTaskForm.addEventListener('submit', function(event) {
+ event.preventDefault();
+const formularioValido = validFormFieldInput();
+
+const tituloDeLaTarea = document.querySelector('#tituloDeLaTarea').value.trim();
+        const descripcionDeLaTarea = document.querySelector('#descripcionDeLaTarea').value.trim();
+        const fechaDeEntrega = document.querySelector('#fechaDeEntrega').value;
+        const estadoTarea = document.querySelector('#estadoTarea').value;
+
+taskManager.addTask(
+            tituloDeLaTarea,
+            descripcionDeLaTarea,
+            fechaDeEntrega,
+            estadoTarea
+        );
+
+newTaskForm.reset();
+
+console.log(taskManager.tasks);
+
+});
