@@ -62,3 +62,31 @@ function validFormFieldInput() {
         botonBadge.textContent = nuevoEstado;
     }
 });
+
+document.addEventListener('click', function(e) {
+     if (e.target.classList.contains('dropdown-item')) {
+        e.preventDefault();
+        
+        const tarjeta = e.target.closest('.tarjeta-tarea');
+        const botonBadge = tarjeta.querySelector('.dropdown-toggle');
+        
+        const nuevoEstado = e.target.getAttribute('data-estado');
+        const nuevoBg = e.target.getAttribute('data-bg');
+        const nuevoBorder = e.target.getAttribute('data-border');
+        
+        tarjeta.classList.remove('border-success', 'border-warning', 'border-danger');
+        tarjeta.classList.add(nuevoBorder);
+        
+        botonBadge.className = `badge ${nuevoBg} etiqueta-personalizada dropdown-toggle`;
+        botonBadge.textContent = nuevoEstado;
+    }
+
+     if (e.target.classList.contains('delete-button')) {
+        const parentTask = e.target.closest('[data-task-id]');
+        const taskId = Number(parentTask.dataset.taskId);
+
+        taskManager.deleteTask(taskId);
+        taskManager.save();
+        taskManager.render();
+    }
+});
