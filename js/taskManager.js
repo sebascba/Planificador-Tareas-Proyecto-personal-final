@@ -15,7 +15,7 @@ class TaskManager {
         });
     }
 
-     deleteTask(taskId) {
+    deleteTask(taskId) {
         const newTasks = [];
         for (let task of this.tasks) {
             if (task.id !== taskId) {
@@ -25,11 +25,21 @@ class TaskManager {
         this.tasks = newTasks;
     }
 
-   createTaskHtml(id, name, description, dueDate, status) {
+     getTaskById(taskId) {
+        let foundTask;
+        for (let task of this.tasks) {
+            if (task.id === taskId) {
+                foundTask = task;
+            }
+        }
+        return foundTask;
+    }
+
+    createTaskHtml(id, name, description, dueDate, status) {
         let borderClass = 'border-warning';
         let badgeClass = 'bg-warning text-dark';
 
-        if (status === 'Completado') {
+        if (status === 'Completado' || status === 'DONE') {
             borderClass = 'border-success';
             badgeClass = 'bg-success text-white';
         } else if (status === 'Retrasado') {
@@ -61,11 +71,15 @@ class TaskManager {
                                 <li><a class="dropdown-item" href="#" data-estado="Retrasado">Retrasado</a></li>
                             </ul>
                         </div>
+                        <button class="done-button btn btn-success">
+                        Mark As Done
+                        </button>
                     </div>
                 </div>
             </div>
         `;
     }
+    
     render() {
         const tasksHtmlList = [];
 

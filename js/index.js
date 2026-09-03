@@ -80,5 +80,20 @@ if (listaDeTareas) {
                 }
             }
         }
+
+         if (event.target.classList.contains('done-button')) {
+            const parentTask = event.target.closest('.col');
+
+            if (parentTask) {
+                const taskId = Number(parentTask.dataset.taskId);
+                const task = taskManager.getTaskById(taskId);
+
+                if (task) {
+                    task.status = 'DONE';
+                    taskManager.save();
+                    taskManager.render();
+                }
+            }
+        }
     });
 }
